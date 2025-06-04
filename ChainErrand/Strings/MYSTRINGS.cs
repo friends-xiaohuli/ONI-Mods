@@ -25,7 +25,7 @@ namespace ChainErrand.Strings {
                   public static LocString TOOLTIP = "Target <style=\"KKeyword\">Empty Pipe</style> errands only";
                }
                public class MOVETO {
-                  public static LocString TOOLTIP = "Target <style=\"KKeyword\">Move To</style> errands only";
+                  public static LocString TOOLTIP = "Target <style=\"KKeyword\">Relocate To</style> errands only";
                }
             }
          }
@@ -48,6 +48,8 @@ namespace ChainErrand.Strings {
             public static LocString LINKNUMBER = "Link Nr.:";
             public static LocString LINKNUMBER_TOOLTIP = "Number of the link\nIf the number is whole, an existing link will be expanded\n" +
                "If the number is a fraction, a new link will be inserted inbetween";
+
+            public static LocString GOTOLINK_TOOLTIP = "Go to this chain link";
 
             public static LocString CHAINNUMBER_NOTFOUND = "NO CHAINS";
             public static LocString LINKNUMBER_NOTFOUND = "NO LINKS";
@@ -90,6 +92,15 @@ namespace ChainErrand.Strings {
          }
          public class CHOREPRECONDITION {
             public static LocString NOTFIRSTLINK = "Must be in the 1st link";
+         }
+         public class AUTOCHAINBUTTON {
+            public static LocString TOOLTIP_HEADER = "Toggle Auto Chain";
+            public static LocString TOOLTIP_CONTENT = "If enabled, all new errands (that can be added to a chain) will be chained up.\nSwitch off and on to create a new chain.\n\n" +
+               "Errands that were created simultaneously and construct errands that were created with one stroke (without releasing the left mouse button) will be added to the same link.";
+         }
+         public class AUTOCHAINNOTIFICATION {
+            public static LocString NAME = "Auto Chain Enabled";
+            public static LocString TOOLTIP = "All newly created errands will be chained up\n\nPress to disable";
          }
       }
    }

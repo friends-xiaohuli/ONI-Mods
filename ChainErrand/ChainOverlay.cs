@@ -141,7 +141,7 @@ namespace ChainErrand {
          //}
       }
       private void AddToVisible(KMonoBehaviour errandRef, HashSet<Workable> collectedErrands) {
-         if(errandRef == null)
+         if(errandRef.IsNullOrDestroyed())
             return;
 
          visibleErrands.Add(errandRef);
@@ -150,7 +150,10 @@ namespace ChainErrand {
          if(errandRef.TryGetComponent(out KBatchedAnimController animController))
          {
             // normal buildings:
-            animController.SetLayer(targetLayer);
+            if(!animController.IsNullOrDestroyed())
+            {
+               animController.SetLayer(targetLayer);
+            }
          }
          else if(Utils.IsTile(errandRef.gameObject, out SimCellOccupier cellOccupier))
          {

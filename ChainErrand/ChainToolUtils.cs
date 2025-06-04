@@ -39,6 +39,9 @@ namespace ChainErrand {
                      if(ChainedErrandPackRegistry.GetChainedErrandPack(typeof(EmptyConduitWorkable)).CollectErrands(errand_go, errands, ref errandReference))
                         break;// buildings can't have other errands
 
+                     if(ChainedErrandPackRegistry.GetChainedErrandPack(typeof(EmptySolidConduitWorkable)).CollectErrands(errand_go, errands, ref errandReference))
+                        break;// buildings can't have other errands
+
                      if(ChainedErrandPackRegistry.GetChainedErrandPack(typeof(Diggable)).CollectErrands(errand_go, errands, ref errandReference))
                         break;// digging markers can't have other errands
 
@@ -64,6 +67,7 @@ namespace ChainErrand {
 
                   case ChainToolFilter.EMPTY_PIPE:
                      ChainedErrandPackRegistry.GetChainedErrandPack(typeof(EmptyConduitWorkable)).CollectErrands(errand_go, errands, ref errandReference);
+                     ChainedErrandPackRegistry.GetChainedErrandPack(typeof(EmptySolidConduitWorkable)).CollectErrands(errand_go, errands, ref errandReference);
                      break;
 
                   case ChainToolFilter.MOVE_TO:
@@ -112,12 +116,11 @@ namespace ChainErrand {
       }
 
       public static void CreateNewChain(Dictionary<GameObject, HashSet<Workable>> firstLinkErrands) {
-         Chain chain = new Chain(ChainsContainer.ChainsCount, UnityEngine.Random.ColorHSV(0f, 1f, 0.5f, 0.9f, 0.6f, 0.9f));
-         ChainsContainer.StoreChain(chain);
+         Chain chain = ChainsContainer.CreateNewChain();
 
-         chain.CreateOrExpandLink(0, false, firstLinkErrands);
+         chain.CreateOrExpandLink(0, true, firstLinkErrands);
 
-         Main.chainTool.SetSelectedChain(ChainsContainer.ChainsCount - 1);
+         Main.chainTool.SetSelectedChain(chain.chainID);
 
          if(!ModConfig.Instance.DisableUIHelp)
          {

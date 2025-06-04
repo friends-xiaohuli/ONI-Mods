@@ -29,6 +29,9 @@ namespace ChainErrand.ChainHierarchy {
       private Color serializedChainColor;
 
       public void ConfigureChorePrecondition(Chore chore = null) {
+         if(this.chore != null && this.chore.driver != null)
+            return;
+
          if(chore == null)
             chore = ChainedErrandPackRegistry.GetChainedErrandPack(this).GetChoreFromErrand(Errand);
          
@@ -36,8 +39,16 @@ namespace ChainErrand.ChainHierarchy {
 
          if(chore != null)
          {
-            if(!chore.preconditions.Any(p => p.id == Main.ChainedErrandPrecondition.id))
-               chore.AddPrecondition(Main.ChainedErrandPrecondition);
+            var precondition = chore.GetPreconditions().FirstOrDefault(p => p.condition.id == Main.ChainedErrandPrecondition.id);
+            if(precondition.condition.id == default)
+            {
+               chore.AddPrecondition(Main.ChainedErrandPrecondition, true/*<--Enables the precondition. If false, the precondition is ignored*/);
+            }
+            else if(precondition.data != null && ((bool)precondition.data == false))// if precondition is disabled
+            {
+               precondition.data = true;
+            }
+
             if(parentLink.linkNumber != 0)// stop dupes from doing errands that are not in the first link
                InterruptChore("Chore was added to a chain");
          }
@@ -80,9 +91,9 @@ namespace ChainErrand.ChainHierarchy {
       }
 
       public void UpdateChainNumber() {
-         if(Main.chainOverlay != default)
+         if(Main.chainOverlay != default && (!chainNumberBearer?.Get()?.IsNullOrDestroyed() ?? false))
          {
-            Main.chainOverlay.UpdateChainNumber(chainNumberBearer?.Get()?.gameObject, Errand, parentLink);
+            Main.chainOverlay.UpdateChainNumber(chainNumberBearer.Get().gameObject, Errand, parentLink);
          }
       }
 
@@ -99,12 +110,14 @@ namespace ChainErrand.ChainHierarchy {
          parentLink = null;
          UpdateChainNumber();
 
-         if(!isBeingDestroyed)
+         if(!isBeingDestroyed && !this.IsNullOrDestroyed())
          {
-            // removing the chore precondition:
+            // disabling the chore precondition:
             if(chore != null)
             {
-               chore.preconditions.Remove(chore.preconditions.FirstOrDefault(precondition => precondition.id == nameof(Main.ChainedErrandPrecondition)));
+               var precondition = chore.GetPreconditions().FirstOrDefault(precondition => precondition.condition.id == nameof(Main.ChainedErrandPrecondition));
+               if(precondition.condition.id != default)
+                  precondition.data = false;
             }
 
             chore = null;
@@ -158,6 +171,14 @@ namespace ChainErrand.ChainHierarchy {
 #pragma warning disable CS0649
       [MyCmpGet]
       private EmptyConduitWorkable errand;
+#pragma warning restore CS0649
+
+      public override Workable Errand { get => errand; }
+   }
+   public class ChainedErrand_EmptySolidConduitWorkable : ChainedErrand {
+#pragma warning disable CS0649
+      [MyCmpGet]
+      private EmptySolidConduitWorkable errand;
 #pragma warning restore CS0649
 
       public override Workable Errand { get => errand; }

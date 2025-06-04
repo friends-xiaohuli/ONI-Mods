@@ -21,18 +21,23 @@ namespace ChainErrand {
       public static readonly Color grayBackgroundColor = new Color32(73, 73, 73, byte.MaxValue);
       public static readonly ColorStyleSetting whiteToggleSetting;// gets darker when hovering over it/activating it
 
+      public static readonly Color autoChainVignetteColor = new Color(0f, 0f, 1f, 0.4f);
+
       public static readonly float noChainMarkerFontSize = 21f;
       public static readonly float maxChainNumberFontSize = 28f;
       public static readonly float minChainNumberFontSize = 13f;
       public static readonly double chainNumberDecreaseRate = 0.16;// modifies how quickly the font size goes from max to min for increasing chain numbers
-      public static float outlineWidthMultiplier = 0.0127f;// used to get Chain Numbers' outline width from font size
+      public static float outlineWidth = 0.36f;
 
       public static readonly Color DefaultChainNumberColor = PUITuning.Colors.ButtonPinkStyle.activeColor;
 
-      public static readonly Chore.Precondition ChainedErrandPrecondition = new() {
+      public static Chore.Precondition ChainedErrandPrecondition = new() {
          id = nameof(ChainedErrandPrecondition),
          description = MYSTRINGS.UI.CHOREPRECONDITION.NOTFIRSTLINK,
-         fn = (ref Chore.Precondition.Context context, object _) => {
+         fn = (ref Chore.Precondition.Context context, object preconditionEnabled) => {
+            if(preconditionEnabled == null || !(bool)preconditionEnabled)
+               return true;
+
             if(context.chore.masterPriority.priority_class == PriorityScreen.PriorityClass.topPriority)
                return true;
 
@@ -54,10 +59,15 @@ namespace ChainErrand {
          }
       };
 
+      public static Notification autoChainNotification = null;
+
       public static PAction chainTool_binding;
 
       public static ChainOverlay chainOverlay;
       public static ChainTool chainTool;
+
+      public static bool autoChainEnabled = false;
+
 
       static Main() {
          Color gray = new Color(0.784f, 0.784f, 0.784f, 1f);

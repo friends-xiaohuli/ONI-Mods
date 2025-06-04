@@ -17,8 +17,7 @@ namespace ChainErrand.ChainedErrandPacks {
          return [new GPatchInfo(targetMethod, null, postfix)];
       }
       private static void CreatePostfix(EmptyConduitWorkable __instance) {
-         if(__instance.TryGetCorrespondingChainedErrand(out ChainedErrand chainedErrand) &&
-            chainedErrand.chore == null)
+         if(__instance.TryGetCorrespondingChainedErrand(out ChainedErrand chainedErrand))
          {
             chainedErrand.ConfigureChorePrecondition(__instance.chore);
          }
@@ -39,7 +38,7 @@ namespace ChainErrand.ChainedErrandPacks {
             chainedErrand.Remove(true);
          }
       }
-      private static void OnWorkTickPostfix(Worker worker, float dt, EmptyConduitWorkable __instance) {
+      private static void OnWorkTickPostfix(WorkerBase worker, float dt, EmptyConduitWorkable __instance) {
          if(__instance.chore == null)
          {
             if(__instance.TryGetCorrespondingChainedErrand(out ChainedErrand chainedErrand))
@@ -53,6 +52,16 @@ namespace ChainErrand.ChainedErrandPacks {
                Main.chainOverlay.RemoveChainNumber(__instance.gameObject, __instance);
             }
          }
+      }
+
+      public override List<GPatchInfo> OnAutoChain_Patch() {
+         var targetMethod = typeof(EmptyConduitWorkable).GetMethod(nameof(EmptyConduitWorkable.CreateWorkChore), Utils.GeneralBindingFlags);
+         var postfix = SymbolExtensions.GetMethodInfo(() => OnMarkForEmpty(default));
+
+         return [new GPatchInfo(targetMethod, null, postfix)];
+      }
+      private static void OnMarkForEmpty(EmptyConduitWorkable __instance) {
+         AutoChainUtils.TryAddToAutomaticChain(__instance.gameObject, __instance);
       }
 
       public override bool CollectErrands(GameObject gameObject, HashSet<Workable> errands, ref KMonoBehaviour errandReference) {
