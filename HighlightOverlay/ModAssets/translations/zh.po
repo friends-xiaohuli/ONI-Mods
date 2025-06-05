@@ -69,19 +69,19 @@ msgstr "所选目标： "
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.CONSUMERS"
 msgid "Consumers"
-msgstr "可消耗的对象"
+msgstr "消耗端"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.PRODUCERS"
 msgid "Producers"
-msgstr "可生产的对象"
+msgstr "生产端"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.CONSUMABLES"
 msgid "Consumables"
-msgstr "消耗的元素"
+msgstr "消耗物"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.PRODUCE"
 msgid "Produce"
-msgstr "生产的元素"
+msgstr "产出物"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.BUILDINGMATERIAL"
 msgid "Building Material"
@@ -98,11 +98,11 @@ msgstr "完全一致的同类物品"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.ELEMENT.CONSIDEROPTION1"
 msgid "Consider Aggregate State"
-msgstr "考虑具体情况"
+msgstr "考虑物态变化"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.ELEMENT.CONSIDEROPTION1_TOOLTIP"
 msgid "Consider elements' aggregate state when highlighting their consumers, producers, produce & copies"
-msgstr "在突出显示时考虑元素的具体情况"
+msgstr "在突出显示时考虑物质的物态变化"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.ELEMENT.CONSUMERS_TOOLTIP"
 msgid "Highlight objects that can consume/store this element"
@@ -114,7 +114,7 @@ msgstr "突出显示可以生产此元素的对象"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.ELEMENT.PRODUCE_TOOLTIP"
 msgid "Highlight elements that can be emitted by this element or be achieved via thermal transition from this element\n(f.e. Petroleum from Crude Oil)"
-msgstr "突出显示可由此元素排放或通过热转移获得的元素\n（例如从原油中获得的石油）"
+msgstr "突出显示此物质可释放的产物或通过热力学转变获得的物质\n（例：原油→石油）
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.ELEMENT.COPIES_TOOLTIP"
 msgid "Highlight objects consisting of this element/objects that contain this element in their storage room"
@@ -140,15 +140,15 @@ msgstr "考虑对象设置"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.BUILDING.CONSIDEROPTION1_TOOLTIP"
 msgid "Consider buildings' settings(storage filters, production queue, required dupe skills) when highlighting their consumables, produce & building material"
-msgstr "在突出显示时考虑对象设置（存储过滤器、生产队列）"
+msgstr "在突出显示时考虑对象设置（存储过滤器、生产队列、复制人技能要求）"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.BUILDING.CONSUMABLES_TOOLTIP"
 msgid "Highlight objects that can be consumed/stored/used by this building"
-msgstr "突出显示可供该建筑消耗/存储/使用的对象"
+msgstr "突出显示可供该建筑消耗/存储/使用的物品"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.BUILDING.PRODUCE_TOOLTIP"
 msgid "Highlight objects that can be produced by this building"
-msgstr "突出显示可以由该建筑生产的对象"
+msgstr "突出显示可以由该建筑生产的物品"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.BUILDING.BUILDINGMATERIAL_TOOLTIP"
 msgid "If \"Consider Buildings' Settings\" option is on:\nHighlight materials this specific building was built with\n\nIf off:\nHighlight materials this building can be built with"
@@ -156,29 +156,29 @@ msgstr "如果选中“考虑对象设置”选项：\n突出显示用于构建�
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.BUILDING.COPIES_TOOLTIP"
 msgid "Highlight copies of this building"
-msgstr "突出显示此建筑的同类物品"
+msgstr "突出显示此建筑的同类副本"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.BUILDING.EXACTCOPIES_TOOLTIP"
 msgid "Highlight copies of this building that consist of the same element"
-msgstr "突出显示该建筑的同类物品中包含相同元素的情况"
+msgstr "突出显示使用相同材料建造的建筑副本"
 
 
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.PLANTORSEED.CONSUMERS_TOOLTIP"
 msgid "Highlight objects that can consume/store this plant's seed or consume this plant"
-msgstr "突出显示可消耗/存储此植物种子的对象或可消耗此植物的对象"
+msgstr "突出显示可消耗/存储此植物种子或消耗此植物的对象"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.PLANTORSEED.CONSUMABLES_TOOLTIP"
 msgid "Highlight objects that can be consumed by this plant"
-msgstr "突出显示此植物可消耗的对象"
+msgstr "突出显示此植物生长所需的消耗物"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.PLANTORSEED.PRODUCE_TOOLTIP"
 msgid "Highlight objects that can be produced by this plant"
-msgstr "突出显示此植物可产生的对象"
+msgstr "突出显示此植物可产出的物品"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.PLANTORSEED.COPIES_TOOLTIP"
 msgid "Highlight plants and seeds of this species"
-msgstr "突出显示该种植物和种子"
+msgstr "突出显示此品种的所有植株与种子"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.PLANTORSEED.EXACTCOPIES_TOOLTIP"
 msgid "Highlight plants and seeds of this species with the same mutation"
@@ -187,11 +187,11 @@ msgstr "突出显示该品种及具有相同变异的种植物和种子"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.CRITTEROREGG.CONSIDEROPTION1"
 msgid "Consider Critters' Morph"
-msgstr "考虑生物变化"
+msgstr "考虑动物变种"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.CRITTEROREGG.CONSIDEROPTION1_TOOLTIP"
 msgid "Consider critters' morph when highlighting their consumers, consumables, produce & copies"
-msgstr "在突出显示时考虑生物变化"
+msgstr "在突出显示时考虑动物变种差异"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.CRITTEROREGG.CONSUMERS_TOOLTIP"
 msgid "Highlight objects that can consume/store this critter's egg or trap/release/interact with this critter"
@@ -199,7 +199,7 @@ msgstr "突出显示可以消耗/存储此生物蛋或捕捉/放生/与该生物
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.CRITTEROREGG.CONSUMABLES_TOOLTIP"
 msgid "Highlight objects that can be consumed by this critter"
-msgstr "突出显示此生物可消耗的对象"
+msgstr "突出显示此生物可消耗的资源"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.CRITTEROREGG.PRODUCE_TOOLTIP"
 msgid "Highlight objects that can be produced by this critter"
@@ -212,7 +212,7 @@ msgstr "突出显示此物种的生物和蛋"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.DUPLICANT.CONSUMERS_TOOLTIP"
 msgid "Highlight buildings that this duplicant can work on/that are assigned to this duplicant"
-msgstr "突出显示此复制人可以工作或分配给此复制人的建筑"
+msgstr "突出显示此复制人可操作或已分配的建筑"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.DUPLICANT.CONSUMABLES_TOOLTIP"
 msgid "Highlight objects that can be consumed by this duplicant(considering their permitted food)"
@@ -258,7 +258,7 @@ msgstr "突出显示可由此对象生产的对象"
 
 msgctxt "HighlightOverlay.Strings.MYSTRINGS.UI.OVERLAYS.HIGHLIGHTMODE.HIGHLIGHTOPTIONS.DEFAULTSTRINGS.COPIES_TOOLTIP"
 msgid "Highlight all occurrences of this object"
-msgstr "突出显示此对象的所有引用"
+msgstr "突出显示此对象的所有同类对象"
 
 
 
