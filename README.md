@@ -12,7 +12,7 @@
 
 创意工坊地址：[点击跳转](https://steamcommunity.com/sharedfiles/filedetails/?id=3170592482)
 
-一个 QoL mod，用于可视化以某种方式与所选对象相关的事物。 
+一个 生活质量 的模组，用于可视化以某种方式与所选对象相关的事物。 
 
 ### 如何使用
 
